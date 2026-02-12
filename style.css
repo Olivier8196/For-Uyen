@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card {
+    background-color: #fff0f5;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #ff99cc;
+    position: relative;
+}
+
+.heart { font-size: 60px; }
+
+.message {
+    font-size: 26px;
+    color: #cc0066;
+    margin: 30px 0;
+}
+
+.buttons { position: relative; height: 80px; }
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#yes { background-color: #fa73a0; color: white; }
+#no { background-color: #cccccc; position: absolute; }
+
+.result {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #ff4d6d, #ff758f);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0; /* for fade-in */
+}
+
+.result h1 { font-size: 42px; margin-bottom: 20px; }
+.result p { font-size: 24px; }
+
+/* Floating sparkle effect */
+.result::before {
+    content: "✨";
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    font-size: 24px;
+    animation: float 3s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateX(0) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50px) translateY(-150px); opacity: 0; }
+}
